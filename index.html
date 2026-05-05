@@ -1378,6 +1378,7 @@
         <h2 class="section-title">Let's See If We're a Fit</h2>
         <p class="section-sub">We take on a limited number of creator partnerships at a time. Fill out the form below and we'll be in touch within 48 hours.</p>
         <div class="apply-form">
+          <form action="https://api.web3forms.com/submit" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label>First Name</label>
@@ -1426,8 +1427,12 @@
             <label>Do you have an existing digital product? If so, describe it.</label>
             <textarea placeholder="E.g. I sell a $27 ebook on budgeting. It gets occasional sales but I haven't actively promoted it..."></textarea>
           </div>
-          <button class="form-submit">Submit Application →</button>
+          <input type="hidden" name="access_key" value="b6317384-5b4d-4a6c-8a04-3de60fb30fde" />
+          <input type="hidden" name="subject" value="New TNT Operators Application" />
+          <input type="hidden" name="redirect" value="https://tntoperators.com/?submitted=true" />
+          <button class="form-submit" type="submit">Submit Application →</button>
           <p class="form-note">We review every application personally. No spam, no sales calls unless you want one.</p>
+          </form>
         </div>
       </div>
     </div>
