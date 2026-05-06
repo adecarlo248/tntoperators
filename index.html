@@ -140,14 +140,32 @@
       gap: 24px;
     }
 
-    .logo {
+    .logo,
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.05rem;
       letter-spacing: 0.08em;
       font-weight: 700;
+      text-transform: uppercase;
     }
 
-    .logo span {
+    .logo-mark,
+    .footer-logo-mark {
+      height: 42px;
+      width: auto;
+      filter: drop-shadow(0 0 16px rgba(69, 199, 255, 0.22));
+    }
+
+    .logo-text,
+    .footer-logo-text {
+      line-height: 1;
+    }
+
+    .logo-text span,
+    .footer-logo-text span {
       color: var(--blue);
       text-shadow: 0 0 18px var(--glow);
     }
@@ -828,14 +846,6 @@
       gap: 16px;
     }
 
-    .footer-brand {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-    }
-
-    .footer-brand span { color: var(--blue); }
     .footer-copy { color: var(--muted); font-size: 0.92rem; }
 
     @keyframes pulse {
@@ -912,7 +922,10 @@
   <div class="page">
     <nav>
       <div class="container nav-inner">
-        <a href="#hero" class="logo"><span>TNT</span> OPERATORS</a>
+        <a href="#hero" class="logo">
+          <img src="tnt-operators-logo.png" alt="TNT Operators logo" class="logo-mark" />
+          <span class="logo-text"><span>TNT</span> OPERATORS</span>
+        </a>
         <ul class="nav-links">
           <li><a href="#how">How It Works</a></li>
           <li><a href="#opportunities">Opportunities</a></li>
@@ -920,7 +933,7 @@
           <li><a href="#who">Who We Work With</a></li>
           <li><a href="#about">About</a></li>
         </ul>
-        <a href="#apply" class="btn-primary">Apply Now</a>
+        <a href="#apply" class="btn-primary">Apply for a Partnership</a>
       </div>
     </nav>
 
@@ -928,10 +941,10 @@
       <div class="container hero-inner">
         <div>
           <div class="eyebrow">Shadow Operator System</div>
-          <h1 class="hero-title">You built the audience. <span class="highlight">We build the empire.</span></h1>
-          <p class="hero-sub">TNT Operators is your behind-the-scenes business partner. We turn your audience into a full revenue machine — product creation, platform setup, sales funnels, fulfillment, and scale. You stay the face. We run the engine.</p>
+          <h1 class="hero-title">Turn your audience into a <span class="highlight">real business.</span></h1>
+          <p class="hero-sub">TNT Operators builds the back-end behind serious creator brands — product creation, platform setup, sales funnels, fulfillment, and scale. You stay the face. We build the machine that makes the brand pay.</p>
           <div class="hero-cta-row">
-            <a href="#apply" class="btn-primary">Apply to Work With Us</a>
+            <a href="#apply" class="btn-primary">Apply for a Creator Partnership</a>
             <a href="#how" class="btn-secondary">See How It Works</a>
           </div>
           <div class="hero-trust">
@@ -956,7 +969,7 @@
           <div class="orbital three"></div>
           <div class="glass-card">
             <div class="status-pill">Limited Availability • Founding Partner Spots</div>
-            <div class="visual-title">A cleaner, more credible operator brand.</div>
+            <div class="visual-title">Built to make creators look bigger, sharper, and more legit.</div>
             <div class="visual-list">
               <div class="visual-item">
                 <div class="visual-icon">⚙️</div>
@@ -1152,7 +1165,7 @@
               <div class="split-rev">Custom rev share</div>
               <div class="small-copy">We only eat when you eat.</div>
             </div>
-            <a href="#apply" class="btn-primary">Apply Now</a>
+            <a href="#apply" class="btn-primary">Apply for a Partnership</a>
           </div>
         </aside>
       </div>
@@ -1251,12 +1264,12 @@
       <div class="container apply-layout">
         <div class="apply-card">
           <div class="eyebrow">Ready to Build?</div>
-          <h2 class="section-title">Let’s see if we’re a fit</h2>
-          <p class="section-sub">We take on a limited number of creator partnerships at a time. If the audience is real and the niche makes sense, we’ll reach out within 48 hours.</p>
+          <h2 class="section-title">If you’ve got the audience, we can build the business behind it.</h2>
+          <p class="section-sub">We’re selective for a reason. We only partner with creators who already have trust, attention, and real monetization upside. If that’s you, apply below and we’ll review it personally within 48 hours.</p>
           <ul class="apply-note-list">
-            <li>Direct review by TNT Operators</li>
-            <li>No generic mass-agency handoff</li>
-            <li>No sales calls unless you actually want one</li>
+            <li>Personally reviewed by TNT Operators</li>
+            <li>Built for serious creators, not tire-kickers</li>
+            <li>No agency fluff. No pressure. Just fit.</li>
           </ul>
         </div>
 
@@ -1319,8 +1332,8 @@
               <textarea id="existing_product" name="existing_product" placeholder="E.g. I sell a $27 ebook on budgeting. It gets occasional sales but I haven’t actively promoted it..."></textarea>
             </div>
 
-            <button class="form-submit" type="submit">Submit Application</button>
-            <p class="form-note">We review every application personally. No spam. No pressure.</p>
+            <button class="form-submit" type="submit">Apply to Work With TNT Operators</button>
+            <p class="form-note">Every application is reviewed personally. If it’s a fit, we’ll reach out fast.</p>
           </form>
         </div>
       </div>
@@ -1328,7 +1341,10 @@
 
     <footer>
       <div class="container footer-inner">
-        <div class="footer-brand"><span>TNT</span> OPERATORS</div>
+        <div class="footer-brand">
+          <img src="tnt-operators-logo.png" alt="TNT Operators logo" class="footer-logo-mark" />
+          <span class="footer-logo-text"><span>TNT</span> OPERATORS</span>
+        </div>
         <div class="footer-copy">© 2026 TNT Operators. We Build. You Shine.</div>
       </div>
     </footer>
