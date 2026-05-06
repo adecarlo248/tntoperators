@@ -1012,6 +1012,139 @@
       margin-bottom: 2rem;
     }
 
+    /* ===== ABOUT ===== */
+    #about {
+      padding: 100px 0;
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--gold), transparent 60%);
+      z-index: 0;
+    }
+
+    .about-photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      box-shadow: 0 20px 80px rgba(245,166,35,0.2);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .about-photo {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 16px;
+      position: relative;
+      z-index: 1;
+      display: block;
+      filter: grayscale(15%);
+    }
+
+    .about-credential {
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--dark3);
+      border: 1px solid var(--border-bright);
+      border-radius: 100px;
+      padding: 0.5rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      z-index: 3;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .about-credential-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    .about-credential-text {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.3px;
+    }
+
+    .about-credential-text span {
+      color: var(--gold);
+    }
+
+    .about-content {
+      padding-top: 1rem;
+    }
+
+    .about-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.8rem;
+    }
+
+    .about-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-body p {
+      font-size: 0.97rem;
+      color: #a09880;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 900px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .about-photo {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1026,6 +1159,7 @@
       <li><a href="#opportunities">Opportunities</a></li>
       <li><a href="#services">What We Do</a></li>
       <li><a href="#who">Who We Work With</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#apply" class="nav-cta">Apply Now</a></li>
     </ul>
   </nav>
@@ -1057,8 +1191,8 @@
             <div class="hero-stat-label">Revenue Split</div>
           </div>
           <div>
-            <div class="hero-stat-num">14 Days</div>
-            <div class="hero-stat-label">Avg. Launch Time</div>
+            <div class="hero-stat-num">Whop</div>
+            <div class="hero-stat-label">Platform We Launch On</div>
           </div>
         </div>
       </div>
@@ -1067,21 +1201,21 @@
           <div class="hero-card hero-card-back"></div>
           <div class="hero-card hero-card-mid"></div>
           <div class="hero-card hero-card-front">
-            <div class="card-tag">Live on Whop</div>
-            <div class="card-title">Financial Freedom Blueprint</div>
+            <div class="card-tag">Founding Partner Spots</div>
+            <div class="card-title">Now Accepting Applications</div>
             <div class="card-creator">
-              <div class="creator-avatar">JM</div>
+              <div class="creator-avatar">🔒</div>
               <div>
-                <div class="creator-name">@jm.finance</div>
-                <div class="creator-niche">Personal Finance • 87K Followers</div>
+                <div class="creator-name">Limited Availability</div>
+                <div class="creator-niche">Each deal gets our full attention — we only take on a few at a time</div>
               </div>
             </div>
             <div class="card-revenue">
               <div>
-                <div class="revenue-num">$8,420</div>
-                <div class="revenue-label">This Month</div>
+                <div class="revenue-num">$0</div>
+                <div class="revenue-label">Upfront to You</div>
               </div>
-              <div class="revenue-badge">↑ 34% MoM</div>
+              <div class="revenue-badge">Rev Share Only</div>
             </div>
           </div>
         </div>
@@ -1346,25 +1480,54 @@
     </div>
   </section>
 
-  <!-- NUMBERS -->
+  <!-- FOUNDING PARTNERS STRIP -->
   <section id="numbers">
     <div class="container">
       <div class="numbers-grid">
         <div>
-          <div class="number-item-num">$23.9M+</div>
-          <div class="number-item-label">Generated by Operators in This System</div>
-        </div>
-        <div>
-          <div class="number-item-num">14 Days</div>
-          <div class="number-item-label">Average Time From Deal to Launch</div>
-        </div>
-        <div>
           <div class="number-item-num">$0</div>
-          <div class="number-item-label">Upfront Cost to Creators</div>
+          <div class="number-item-label">Upfront Cost to You</div>
+        </div>
+        <div>
+          <div class="number-item-num">30–50%</div>
+          <div class="number-item-label">Your Revenue Share</div>
+        </div>
+        <div>
+          <div class="number-item-num">Full</div>
+          <div class="number-item-label">Back-End Built & Managed by Us</div>
         </div>
         <div>
           <div class="number-item-num">Whop</div>
           <div class="number-item-label">World's #1 Digital Product Platform</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-photo-wrap">
+          <img src="tony.jpg" alt="Tony DeCarlo — TNT Operators" class="about-photo" />
+          <div class="about-credential">
+            <div class="about-credential-dot"></div>
+            <div class="about-credential-text">Trained via <span>Monetise</span> by Iman Gadzhi</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-label">The Operator Behind TNT</div>
+          <div class="about-name">Tony DeCarlo</div>
+          <div class="about-title">Founder &amp; Lead Operator</div>
+          <div class="about-body">
+            <p>I'm a financial educator, entrepreneur, and the person who actually runs this.</p>
+            <p>I've recently been helping families get out of debt and build real wealth. That gave me something most operators don't have: I speak the language of money creators. I understand your audience, I understand what they need, and I know how to build products that genuinely help them — not just sell to them.</p>
+            <p>I got into the Shadow Operator model through Iman Gadzhi's Monetise program — the same system behind $23.9M+ in tracked creator sales. I took it seriously, built the systems, and launched TNT to partner with creators who have the audience but haven't monetized it yet.</p>
+            <p>I work across niches — finance, fitness, trades, real estate, spirituality, and beyond. If your audience trusts you and you're not monetizing that yet, there's a product waiting to be built. I don't care what the niche is. Engaged audiences convert.</p>
+            <p>I work with a small number of partners at a time — on purpose. Every deal gets my full attention from product idea to live storefront. No outsourcing to someone you've never met. You deal with me directly.</p>
+            <p>If you've got an audience and you're leaving money on the table, let's talk.</p>
+          </div>
+          <a href="#apply" class="btn-primary">Apply to Partner With Me →</a>
         </div>
       </div>
     </div>
