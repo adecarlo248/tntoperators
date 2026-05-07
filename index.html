@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TNT Operators | We Build. You Shine.</title>
-  <meta name="description" content="TNT Operators turns your audience into a revenue machine. We handle product creation, platform setup, sales funnels, and fulfillment while you stay the face of the brand." />
+  <title>TNT Operators | The Operator Behind Creator-Led Businesses</title>
+  <meta name="description" content="TNT Operators partners with serious creators to build premium digital products, storefronts, funnels, fulfillment systems, and revenue infrastructure while the creator stays the face of the brand." />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
@@ -81,17 +81,20 @@
 
     .bg-grid,
     .bg-wave,
-    .bg-wave-2 {
+    .bg-wave-2,
+    .bg-aurora,
+    .bg-beam,
+    .bg-noise {
       position: absolute;
       inset: 0;
     }
 
     .bg-grid {
       background-image:
-        linear-gradient(rgba(123, 211, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(123, 211, 255, 0.05) 1px, transparent 1px);
-      background-size: 90px 90px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), transparent 92%);
+        linear-gradient(rgba(123, 211, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(123, 211, 255, 0.055) 1px, transparent 1px);
+      background-size: 86px 86px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.78), transparent 88%);
     }
 
     .bg-wave,
@@ -99,18 +102,43 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      opacity: 0.24;
+      opacity: 0.26;
     }
 
     .bg-wave {
-      background-image: radial-gradient(circle at 20% 30%, transparent 0 24%, rgba(69,199,255,0.1) 24.2% 24.7%, transparent 25%), radial-gradient(circle at 68% 56%, transparent 0 18%, rgba(123,211,255,0.12) 18.2% 18.6%, transparent 19%);
+      background-image:
+        radial-gradient(circle at 20% 30%, transparent 0 24%, rgba(69,199,255,0.12) 24.2% 24.7%, transparent 25%),
+        radial-gradient(circle at 68% 56%, transparent 0 18%, rgba(123,211,255,0.14) 18.2% 18.6%, transparent 19%);
       animation: floatSlow 20s ease-in-out infinite;
     }
 
     .bg-wave-2 {
-      background-image: linear-gradient(120deg, transparent 20%, rgba(69,199,255,0.1) 50%, transparent 80%);
+      background-image: linear-gradient(120deg, transparent 16%, rgba(69,199,255,0.13) 50%, transparent 84%);
       transform: skewY(-8deg);
       animation: sweep 14s linear infinite;
+    }
+
+    .bg-aurora {
+      background:
+        conic-gradient(from 215deg at 50% 8%, transparent 0 18%, rgba(69,199,255,0.13) 25%, transparent 36%, rgba(29,143,255,0.16) 48%, transparent 62%),
+        radial-gradient(ellipse at 52% 8%, rgba(123,211,255,0.18), transparent 32%);
+      opacity: 0.78;
+      mix-blend-mode: screen;
+    }
+
+    .bg-beam {
+      background:
+        linear-gradient(104deg, transparent 0 42%, rgba(123,211,255,0.08) 48%, transparent 56%),
+        linear-gradient(72deg, transparent 0 28%, rgba(29,143,255,0.07) 38%, transparent 50%);
+      filter: blur(1px);
+      animation: beamShift 16s ease-in-out infinite alternate;
+    }
+
+    .bg-noise {
+      opacity: 0.08;
+      background-image: radial-gradient(rgba(255,255,255,0.55) 0.65px, transparent 0.65px);
+      background-size: 18px 18px;
+      mask-image: linear-gradient(180deg, black, transparent 84%);
     }
 
     .page {
@@ -133,7 +161,7 @@
     }
 
     .nav-inner {
-      min-height: 152px;
+      min-height: 132px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -145,20 +173,41 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+    }
+
+    .logo {
+      padding: 12px 18px;
+      border-radius: 30px;
+      background: radial-gradient(circle at 50% 35%, rgba(69,199,255,0.19), rgba(69,199,255,0.04) 48%, rgba(255,255,255,0.015));
+      border: 1px solid rgba(123,211,255,0.2);
+      box-shadow: 0 0 0 1px rgba(69,199,255,0.06) inset, 0 24px 70px rgba(29,143,255,0.16);
+      overflow: hidden;
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      inset: -55% -25%;
+      background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.18), transparent 70%);
+      transform: translateX(-70%);
+      animation: logoShine 4.8s ease-in-out infinite;
     }
 
     .logo-mark,
     .footer-logo-mark {
       width: auto;
-      filter: brightness(1.18) saturate(1.12) drop-shadow(0 0 24px rgba(69, 199, 255, 0.34));
+      position: relative;
+      z-index: 1;
+      filter: brightness(1.28) saturate(1.18) drop-shadow(0 0 28px rgba(69, 199, 255, 0.44)) drop-shadow(0 16px 34px rgba(0, 0, 0, 0.38));
     }
 
     .logo-mark {
-      height: 128px;
+      height: 118px;
     }
 
     .footer-logo-mark {
-      height: 54px;
+      height: 72px;
     }
 
     .nav-links {
@@ -866,6 +915,17 @@
       to { transform: translateX(12%) skewY(-8deg); }
     }
 
+    @keyframes beamShift {
+      from { transform: translateX(-2%) translateY(0); opacity: 0.62; }
+      to { transform: translateX(2%) translateY(-2%); opacity: 0.9; }
+    }
+
+    @keyframes logoShine {
+      0%, 52%, 100% { transform: translateX(-78%) rotate(0deg); opacity: 0; }
+      62% { opacity: 1; }
+      82% { transform: translateX(78%) rotate(0deg); opacity: 0; }
+    }
+
     @media (max-width: 1080px) {
       .hero-inner,
       .services-layout,
@@ -901,8 +961,9 @@
       .orbital.one { width: 360px; height: 360px; }
       .orbital.two { width: 280px; height: 280px; }
       .orbital.three { width: 210px; height: 210px; }
-      .logo-mark { height: 92px; }
-      .footer-logo-mark { height: 48px; }
+      .logo { padding: 8px 12px; border-radius: 22px; }
+      .logo-mark { height: 88px; }
+      .footer-logo-mark { height: 56px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -910,8 +971,11 @@
 <body>
   <div class="bg" aria-hidden="true">
     <div class="bg-grid"></div>
+    <div class="bg-aurora"></div>
+    <div class="bg-beam"></div>
     <div class="bg-wave"></div>
     <div class="bg-wave-2"></div>
+    <div class="bg-noise"></div>
   </div>
 
   <div class="page">
@@ -934,9 +998,9 @@
     <section class="hero" id="hero">
       <div class="container hero-inner">
         <div>
-          <div class="eyebrow">Shadow Operator System</div>
-          <h1 class="hero-title">Turn your audience into a <span class="highlight">real business.</span></h1>
-          <p class="hero-sub">TNT Operators builds the back-end behind serious creator brands — product creation, platform setup, sales funnels, fulfillment, and scale. You stay the face. We build the machine that makes the brand pay.</p>
+          <div class="eyebrow">Private Operator Partner</div>
+          <h1 class="hero-title">We build the business behind <span class="highlight">creator empires.</span></h1>
+          <p class="hero-sub">TNT Operators partners with serious creators to turn trust, attention, and expertise into premium digital products, polished storefronts, sales systems, and fulfillment. You stay the face. We build the engine behind the brand.</p>
           <div class="hero-cta-row">
             <a href="#apply" class="btn-primary">Apply for a Creator Partnership</a>
             <a href="#how" class="btn-secondary">See How It Works</a>
@@ -951,8 +1015,8 @@
               <div class="trust-label">Revenue Split Per Deal</div>
             </div>
             <div class="trust-card">
-              <div class="trust-number">Whop</div>
-              <div class="trust-label">Launch Platform</div>
+              <div class="trust-number">Premium</div>
+              <div class="trust-label">Launch Experience</div>
             </div>
           </div>
         </div>
@@ -962,28 +1026,28 @@
           <div class="orbital two"></div>
           <div class="orbital three"></div>
           <div class="glass-card">
-            <div class="status-pill">Limited Availability • Founding Partner Spots</div>
-            <div class="visual-title">Built to make creators look bigger, sharper, and more legit.</div>
+            <div class="status-pill">Selective Partnerships • Operator-Led Builds</div>
+            <div class="visual-title">Built for creators whose audience is too valuable for amateur funnels.</div>
             <div class="visual-list">
               <div class="visual-item">
                 <div class="visual-icon">⚙️</div>
                 <div>
-                  <div class="card-title">Built for serious creators</div>
-                  <div class="card-copy">We package your expertise into offers your audience can actually buy — then we handle the infrastructure behind it.</div>
+                  <div class="card-title">Premium offer architecture</div>
+                  <div class="card-copy">We turn your expertise into a clear, credible offer your audience can understand, trust, and buy.</div>
                 </div>
               </div>
               <div class="visual-item">
                 <div class="visual-icon">🚀</div>
                 <div>
-                  <div class="card-title">Launch-ready systems</div>
-                  <div class="card-copy">Products, sales pages, store setup, funnel flow, and follow-up systems — built to feel premium from day one.</div>
+                  <div class="card-title">Launch-ready infrastructure</div>
+                  <div class="card-copy">Storefront, sales page, pricing, delivery, and follow-up — built to feel sharp from the first click.</div>
                 </div>
               </div>
               <div class="visual-item">
                 <div class="visual-icon">🤝</div>
                 <div>
-                  <div class="card-title">Rev-share aligned</div>
-                  <div class="card-copy">We only win when you win. No bloated retainers. No handoff to random freelancers.</div>
+                  <div class="card-title">Aligned partnership</div>
+                  <div class="card-copy">No bloated retainers. No agency handoff. The model is simple: if the business wins, we win together.</div>
                 </div>
               </div>
             </div>
@@ -1001,29 +1065,29 @@
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">The Process</div>
-          <h2 class="section-title">From audience to income in 4 simple steps</h2>
-          <p class="section-sub">You focus on content and audience growth. We handle the back-end buildout that turns attention into revenue.</p>
+          <h2 class="section-title">From audience to product business in 4 decisive moves</h2>
+          <p class="section-sub">You keep building attention. We build the backend that turns that attention into a real, sellable offer with a clean customer experience.</p>
         </div>
         <div class="steps-grid">
           <article class="step-card">
             <div class="step-number">01</div>
-            <h3 class="card-title">We Find the Opportunity</h3>
-            <p class="card-copy">We analyze your audience, content, and niche to identify the exact product your followers are already primed to buy.</p>
+            <h3 class="card-title">We identify the money angle</h3>
+            <p class="card-copy">We study your audience, content, positioning, and trust signals to find the product opportunity that actually fits your brand.</p>
           </article>
           <article class="step-card">
             <div class="step-number">02</div>
-            <h3 class="card-title">We Build the Product</h3>
-            <p class="card-copy">We create the digital offer — ebook, course, membership, toolkit, or coaching offer — built around your expertise and voice.</p>
+            <h3 class="card-title">We build the offer</h3>
+            <p class="card-copy">We package your knowledge into a digital product, course, membership, toolkit, or coaching offer that feels premium and specific.</p>
           </article>
           <article class="step-card">
             <div class="step-number">03</div>
-            <h3 class="card-title">We Launch the Store</h3>
-            <p class="card-copy">We set up your Whop storefront, sales page, pricing, and funnel so you can launch in days instead of dragging it out for months.</p>
+            <h3 class="card-title">We launch the storefront</h3>
+            <p class="card-copy">We set up the store, sales page, pricing, access, and funnel flow so buyers get a clean experience from checkout to delivery.</p>
           </article>
           <article class="step-card">
             <div class="step-number">04</div>
-            <h3 class="card-title">We Scale Together</h3>
-            <p class="card-copy">Once live, we optimize pricing, follow-up, affiliates, and next-product opportunities so the business keeps compounding.</p>
+            <h3 class="card-title">We improve the machine</h3>
+            <p class="card-copy">Once live, we tighten pricing, follow-up, messaging, and next-product opportunities so the business keeps getting stronger.</p>
           </article>
         </div>
       </div>
@@ -1033,8 +1097,8 @@
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">What We Build</div>
-          <h2 class="section-title">Revenue opportunities we create for creators</h2>
-          <p class="section-sub">Every engaged audience is sitting on unrealized income. We help turn that trust into structured offers that feel premium and sell cleanly.</p>
+          <h2 class="section-title">What a serious creator can turn into revenue</h2>
+          <p class="section-sub">If your audience trusts your taste, knowledge, or results, there is usually a clean product path hiding in plain sight. We turn that into a structured offer.</p>
         </div>
         <div class="opps-grid">
           <article class="opp-card">
@@ -1059,7 +1123,7 @@
             <div class="opp-icon">🛠️</div>
             <h3 class="card-title">Templates & Toolkits</h3>
             <p class="opp-desc">Plug-and-play assets your audience can use immediately — fast to build, easy to buy, and strong for evergreen sales.</p>
-            <div class="opp-tags"><span>Notion Templates</span><span>Spreadsheets</span><span>Prompt Packs</span><span>Canva Kits</span></div>
+            <div class="opp-tags"><span>Notion Templates</span><span>Spreadsheets</span><span>Resource Libraries</span><span>Canva Kits</span></div>
           </article>
           <article class="opp-card">
             <div class="opp-icon">🤝</div>
@@ -1089,15 +1153,15 @@
             <article class="service-card">
               <div class="service-icon">🤖</div>
               <div>
-                <h3 class="service-title">AI-Powered Product Creation</h3>
-                <p class="service-copy">We use modern AI workflows to build your product faster without making it feel generic. The goal is premium, useful, and in your voice.</p>
+                <h3 class="service-title">Premium Product Creation</h3>
+                <p class="service-copy">We turn your knowledge, frameworks, and content into a product that feels useful, polished, and true to your voice.</p>
               </div>
             </article>
             <article class="service-card">
               <div class="service-icon">🏪</div>
               <div>
-                <h3 class="service-title">Whop Store Setup & Optimization</h3>
-                <p class="service-copy">We build your storefront on Whop, structure pricing, tighten copy, and set up the access flow so the buying experience feels legit.</p>
+                <h3 class="service-title">Storefront Setup & Optimization</h3>
+                <p class="service-copy">We build the storefront, structure pricing, tighten copy, and set up the access flow so the buying experience feels legitimate and premium.</p>
               </div>
             </article>
             <article class="service-card">
@@ -1126,19 +1190,19 @@
 
         <aside class="split-box">
           <div class="split-box-header">
-            <div class="mini-label">The Partnership Split</div>
-            <h3 class="split-title">Rev-share, not bloated retainers</h3>
-            <p class="split-copy">This is built to align incentives. We only win when the product actually works and your audience buys.</p>
+            <div class="mini-label">The Partnership Model</div>
+            <h3 class="split-title">Built like operators, not consultants</h3>
+            <p class="split-copy">This is not a deck, a strategy call, or a handoff. We build the business infrastructure and stay aligned through revenue share.</p>
           </div>
           <div class="responsibility-grid">
             <div class="responsibility-col">
               <h4>TNT Operators</h4>
               <ul>
                 <li>Build the product</li>
-                <li>Set up the Whop store</li>
+                <li>Set up the storefront</li>
                 <li>Write the sales copy</li>
                 <li>Build the funnel</li>
-                <li>Scale and optimize</li>
+                <li>Improve and optimize</li>
                 <li>Support the systems</li>
               </ul>
             </div>
@@ -1157,7 +1221,7 @@
           <div class="split-footer">
             <div>
               <div class="split-rev">Custom rev share</div>
-              <div class="small-copy">We only eat when you eat.</div>
+              <div class="small-copy">Aligned upside. Clean responsibilities.</div>
             </div>
             <a href="#apply" class="btn-primary">Apply for a Partnership</a>
           </div>
@@ -1170,7 +1234,7 @@
         <div class="section-head">
           <div class="eyebrow">Ideal Partners</div>
           <h2 class="section-title">Who we work with</h2>
-          <p class="section-sub">We partner with creators across multiple niches, but the same rule applies every time: trust plus an engaged audience equals monetization opportunity.</p>
+          <p class="section-sub">We partner across multiple niches, but the filter is strict: real audience trust, clear expertise, and a product opportunity worth building properly.</p>
         </div>
         <div class="who-grid">
           <article class="who-card">
@@ -1225,7 +1289,7 @@
           <div class="numbers-card"><strong>$0</strong><span>Upfront cost to you</span></div>
           <div class="numbers-card"><strong>Custom</strong><span>Revenue share agreed together</span></div>
           <div class="numbers-card"><strong>Full</strong><span>Back-end built and managed by us</span></div>
-          <div class="numbers-card"><strong>Whop</strong><span>Digital product platform we launch on</span></div>
+          <div class="numbers-card"><strong>Premium</strong><span>Positioning, product, and buyer experience</span></div>
         </div>
       </div>
     </section>
@@ -1258,12 +1322,12 @@
       <div class="container apply-layout">
         <div class="apply-card">
           <div class="eyebrow">Ready to Build?</div>
-          <h2 class="section-title">If you’ve got the audience, we can build the business behind it.</h2>
-          <p class="section-sub">We’re selective for a reason. We only partner with creators who already have trust, attention, and real monetization upside. If that’s you, apply below and we’ll review it personally within 48 hours.</p>
+          <h2 class="section-title">If your audience is real, the business behind it should be real too.</h2>
+          <p class="section-sub">We’re selective because the work is hands-on. We only partner with creators who have trust, attention, and real monetization upside. If that’s you, apply below and we’ll review it personally within 48 hours.</p>
           <ul class="apply-note-list">
             <li>Personally reviewed by TNT Operators</li>
             <li>Built for serious creators, not tire-kickers</li>
-            <li>No agency fluff. No pressure. Just fit.</li>
+            <li>No agency fluff. No pressure. Just fit and upside.</li>
           </ul>
         </div>
 
