@@ -172,42 +172,104 @@
     .footer-brand {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      gap: 16px;
       position: relative;
     }
 
     .logo {
-      padding: 12px 18px;
-      border-radius: 30px;
-      background: radial-gradient(circle at 50% 35%, rgba(69,199,255,0.19), rgba(69,199,255,0.04) 48%, rgba(255,255,255,0.015));
-      border: 1px solid rgba(123,211,255,0.2);
-      box-shadow: 0 0 0 1px rgba(69,199,255,0.06) inset, 0 24px 70px rgba(29,143,255,0.16);
+      padding: 12px 18px 12px 14px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(10, 24, 42, 0.92), rgba(7, 18, 32, 0.82));
+      border: 1px solid rgba(123,211,255,0.18);
+      box-shadow: 0 0 0 1px rgba(69,199,255,0.05) inset, 0 18px 44px rgba(0, 0, 0, 0.26);
       overflow: hidden;
     }
 
     .logo::before {
       content: '';
       position: absolute;
-      inset: -55% -25%;
-      background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.18), transparent 70%);
-      transform: translateX(-70%);
-      animation: logoShine 4.8s ease-in-out infinite;
+      inset: 0 0 auto 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.26), transparent);
+      opacity: 0.7;
     }
 
-    .logo-mark,
-    .footer-logo-mark {
-      width: auto;
-      position: relative;
-      z-index: 1;
-      filter: brightness(1.28) saturate(1.18) drop-shadow(0 0 28px rgba(69, 199, 255, 0.44)) drop-shadow(0 16px 34px rgba(0, 0, 0, 0.38));
+    .brand-mark {
+      width: 74px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(69,199,255,0.24), transparent 58%),
+        linear-gradient(160deg, rgba(10, 30, 52, 0.98), rgba(5, 14, 26, 0.95));
+      border: 1px solid rgba(123,211,255,0.22);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        inset 0 -12px 30px rgba(0,0,0,0.2),
+        0 12px 32px rgba(0,0,0,0.24);
+      flex: 0 0 auto;
     }
 
-    .logo-mark {
-      height: 118px;
+    .brand-mark::before {
+      content: '';
+      width: 58px;
+      height: 42px;
+      background-image: url('tnt-operators-logo-v2.png');
+      background-repeat: no-repeat;
+      background-size: 158px 42px;
+      background-position: left center;
+      filter: brightness(1.16) saturate(1.1) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.26));
     }
 
-    .footer-logo-mark {
-      height: 72px;
+    .brand-wordmark {
+      display: grid;
+      gap: 2px;
+      line-height: 0.92;
+    }
+
+    .brand-wordmark-top,
+    .brand-wordmark-bottom {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .brand-wordmark-top {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #f4fbff;
+    }
+
+    .brand-wordmark-bottom {
+      font-size: 1.08rem;
+      font-weight: 500;
+      color: #9fc3dd;
+    }
+
+    .footer-brand {
+      gap: 12px;
+    }
+
+    .footer-brand .brand-mark {
+      width: 60px;
+      height: 48px;
+      border-radius: 15px;
+    }
+
+    .footer-brand .brand-mark::before {
+      width: 47px;
+      height: 34px;
+      background-size: 128px 34px;
+    }
+
+    .footer-brand .brand-wordmark-top {
+      font-size: 1.34rem;
+    }
+
+    .footer-brand .brand-wordmark-bottom {
+      font-size: 0.82rem;
     }
 
     .nav-links {
@@ -920,12 +982,6 @@
       to { transform: translateX(2%) translateY(-2%); opacity: 0.9; }
     }
 
-    @keyframes logoShine {
-      0%, 52%, 100% { transform: translateX(-78%) rotate(0deg); opacity: 0; }
-      62% { opacity: 1; }
-      82% { transform: translateX(78%) rotate(0deg); opacity: 0; }
-    }
-
     @media (max-width: 1080px) {
       .hero-inner,
       .services-layout,
@@ -961,9 +1017,11 @@
       .orbital.one { width: 360px; height: 360px; }
       .orbital.two { width: 280px; height: 280px; }
       .orbital.three { width: 210px; height: 210px; }
-      .logo { padding: 8px 12px; border-radius: 22px; }
-      .logo-mark { height: 88px; }
-      .footer-logo-mark { height: 56px; }
+      .logo { padding: 10px 12px; gap: 12px; border-radius: 20px; }
+      .brand-mark { width: 62px; height: 50px; border-radius: 15px; }
+      .brand-mark::before { width: 48px; height: 35px; background-size: 132px 35px; }
+      .brand-wordmark-top { font-size: 1.45rem; }
+      .brand-wordmark-bottom { font-size: 0.86rem; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -981,8 +1039,12 @@
   <div class="page">
     <nav>
       <div class="container nav-inner">
-        <a href="#hero" class="logo">
-          <img src="tnt-operators-logo-v2.png" alt="TNT Operators logo" class="logo-mark" />
+        <a href="#hero" class="logo" aria-label="TNT Operators home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-wordmark" aria-hidden="true">
+            <span class="brand-wordmark-top">TNT</span>
+            <span class="brand-wordmark-bottom">OPERATORS</span>
+          </span>
         </a>
         <ul class="nav-links">
           <li><a href="#how">How It Works</a></li>
@@ -1399,8 +1461,12 @@
 
     <footer>
       <div class="container footer-inner">
-        <div class="footer-brand">
-          <img src="tnt-operators-logo-v2.png" alt="TNT Operators logo" class="footer-logo-mark" />
+        <div class="footer-brand" aria-label="TNT Operators">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-wordmark" aria-hidden="true">
+            <span class="brand-wordmark-top">TNT</span>
+            <span class="brand-wordmark-bottom">OPERATORS</span>
+          </span>
         </div>
         <div class="footer-copy">© 2026 TNT Operators. We Build. You Shine.</div>
       </div>
